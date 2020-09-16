@@ -1,8 +1,8 @@
 //
-//  ContentView.swift
+//  Minimal.swift
 //  swiftui-mvvm
 //
-//  Created by Cicero Camargo on 07/09/20.
+//  Created by Cicero Camargo on 16/09/20.
 //  Copyright © 2020 Cicero Camargo. All rights reserved.
 //
 
