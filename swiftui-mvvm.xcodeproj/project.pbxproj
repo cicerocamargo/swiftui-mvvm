@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A600DDA825122722002816F5 /* Minimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600DDA725122722002816F5 /* Minimal.swift */; };
+		A67096EB25137A1900E3846A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67096EA25137A1900E3846A /* Login.swift */; };
+		A67096EE2513898600E3846A /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67096ED2513898600E3846A /* BindingExtensions.swift */; };
 		A6B2DC1225065DBA0036FBD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2DC1125065DBA0036FBD1 /* AppDelegate.swift */; };
 		A6B2DC1425065DBA0036FBD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2DC1325065DBA0036FBD1 /* SceneDelegate.swift */; };
 		A6B2DC1825065DBB0036FBD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B2DC1725065DBB0036FBD1 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		A600DDA725122722002816F5 /* Minimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minimal.swift; sourceTree = "<group>"; };
+		A67096EA25137A1900E3846A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		A67096ED2513898600E3846A /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
 		A6B2DC0E25065DBA0036FBD1 /* swiftui-mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftui-mvvm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B2DC1125065DBA0036FBD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6B2DC1325065DBA0036FBD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,8 +66,17 @@
 			isa = PBXGroup;
 			children = (
 				A600DDA725122722002816F5 /* Minimal.swift */,
+				A67096EA25137A1900E3846A /* Login.swift */,
 			);
 			path = Recipes;
+			sourceTree = "<group>";
+		};
+		A67096EC2513897700E3846A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A67096ED2513898600E3846A /* BindingExtensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		A6B2DC0525065DBA0036FBD1 = {
@@ -87,6 +100,7 @@
 		A6B2DC1025065DBA0036FBD1 /* swiftui-mvvm */ = {
 			isa = PBXGroup;
 			children = (
+				A67096EC2513897700E3846A /* Extension */,
 				A600DDA625122707002816F5 /* Recipes */,
 				A6B2DC1125065DBA0036FBD1 /* AppDelegate.swift */,
 				A6B2DC1325065DBA0036FBD1 /* SceneDelegate.swift */,
@@ -219,6 +233,8 @@
 				A6B2DC1225065DBA0036FBD1 /* AppDelegate.swift in Sources */,
 				A6B2DC1425065DBA0036FBD1 /* SceneDelegate.swift in Sources */,
 				A600DDA825122722002816F5 /* Minimal.swift in Sources */,
+				A67096EB25137A1900E3846A /* Login.swift in Sources */,
+				A67096EE2513898600E3846A /* BindingExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
