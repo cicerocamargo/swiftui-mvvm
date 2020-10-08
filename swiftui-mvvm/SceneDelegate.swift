@@ -9,6 +9,18 @@
 import UIKit
 import SwiftUI
 
+struct FailWithDelayLoginService: LoginService {
+    func login(
+        email: String,
+        password: String,
+        completion: @escaping (Error?) -> Void
+    ) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            completion(NSError(domain: "", code: 1, userInfo: nil))
+        }
+    }
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -21,7 +33,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = NavigationView {
-            LoginView(model: .init(initialState: .init()))
+            LoginView(
+                model: .init(
+                    initialState: .init(),
+                    service: FailWithDelayLoginService(),
+                    loginDidSucceed: {}
+                )
+            )
         }
 
         // Use a UIHostingController as window root view controller.

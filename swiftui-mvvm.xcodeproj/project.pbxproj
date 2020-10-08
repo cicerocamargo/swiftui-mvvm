@@ -10,12 +10,12 @@
 		A600DDA825122722002816F5 /* Minimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600DDA725122722002816F5 /* Minimal.swift */; };
 		A67096EB25137A1900E3846A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67096EA25137A1900E3846A /* Login.swift */; };
 		A67096EE2513898600E3846A /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67096ED2513898600E3846A /* BindingExtensions.swift */; };
+		A6AA032425290FFA00DB97E1 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AA032325290FFA00DB97E1 /* LoginTests.swift */; };
 		A6B2DC1225065DBA0036FBD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2DC1125065DBA0036FBD1 /* AppDelegate.swift */; };
 		A6B2DC1425065DBA0036FBD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2DC1325065DBA0036FBD1 /* SceneDelegate.swift */; };
 		A6B2DC1825065DBB0036FBD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B2DC1725065DBB0036FBD1 /* Assets.xcassets */; };
 		A6B2DC1B25065DBB0036FBD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B2DC1A25065DBB0036FBD1 /* Preview Assets.xcassets */; };
 		A6B2DC1E25065DBB0036FBD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B2DC1C25065DBB0036FBD1 /* LaunchScreen.storyboard */; };
-		A6B2DC2925065DBB0036FBD1 /* swiftui_mvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B2DC2825065DBB0036FBD1 /* swiftui_mvvmTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +32,7 @@
 		A600DDA725122722002816F5 /* Minimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minimal.swift; sourceTree = "<group>"; };
 		A67096EA25137A1900E3846A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		A67096ED2513898600E3846A /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
+		A6AA032325290FFA00DB97E1 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		A6B2DC0E25065DBA0036FBD1 /* swiftui-mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftui-mvvm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B2DC1125065DBA0036FBD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6B2DC1325065DBA0036FBD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		A6B2DC1D25065DBB0036FBD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6B2DC1F25065DBB0036FBD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6B2DC2425065DBB0036FBD1 /* swiftui-mvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-mvvmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6B2DC2825065DBB0036FBD1 /* swiftui_mvvmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_mvvmTests.swift; sourceTree = "<group>"; };
 		A6B2DC2A25065DBB0036FBD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,8 +123,8 @@
 		A6B2DC2725065DBB0036FBD1 /* swiftui-mvvmTests */ = {
 			isa = PBXGroup;
 			children = (
-				A6B2DC2825065DBB0036FBD1 /* swiftui_mvvmTests.swift */,
 				A6B2DC2A25065DBB0036FBD1 /* Info.plist */,
+				A6AA032325290FFA00DB97E1 /* LoginTests.swift */,
 			);
 			path = "swiftui-mvvmTests";
 			sourceTree = "<group>";
@@ -182,6 +182,7 @@
 					};
 					A6B2DC2325065DBB0036FBD1 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1200;
 						TestTargetID = A6B2DC0D25065DBA0036FBD1;
 					};
 				};
@@ -242,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B2DC2925065DBB0036FBD1 /* swiftui_mvvmTests.swift in Sources */,
+				A6AA032425290FFA00DB97E1 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +428,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7463GHQCGZ;
 				INFOPLIST_FILE = "swiftui-mvvmTests/Info.plist";
@@ -438,6 +440,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.codemus.swiftui-mvvmTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swiftui-mvvm.app/swiftui-mvvm";
@@ -449,6 +452,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7463GHQCGZ;
 				INFOPLIST_FILE = "swiftui-mvvmTests/Info.plist";

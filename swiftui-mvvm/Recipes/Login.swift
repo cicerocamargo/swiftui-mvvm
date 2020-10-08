@@ -47,7 +47,7 @@ struct LoginView: View {
     }
 }
 
-struct LoginViewState {
+struct LoginViewState: Equatable {
     var email = ""
     var password = ""
     var isLoggingIn = false
@@ -55,17 +55,39 @@ struct LoginViewState {
 }
 
 extension LoginViewState {
+    static let isLoggingInFooter = "Fazendo login..."
+
     var canSubmit: Bool {
-        email.isEmpty == false && password.isEmpty == false
+        email.isEmpty == false // TODO: Improve email validation
+            && password.isEmpty == false
+            && isLoggingIn == false
     }
 
     var footerMessage: String {
-        isLoggingIn ? "Fazendo login..." : ""
+        isLoggingIn ? Self.isLoggingInFooter : ""
     }
+}
+
+protocol LoginService {
+    func login(
+        email: String,
+        password: String,
+        completion: @escaping (Error?) -> Void
+    )
+}
+
+struct EmptyLoginService: LoginService {
+    func login(
+        email: String,
+        password: String,
+        completion: @escaping (Error?) -> Void
+    ) {}
 }
 
 final class LoginViewModel: ObservableObject {
     @Published private(set) var state: LoginViewState
+    private let service: LoginService
+    private let loginDidSucceed: () -> Void
 
     var bindings: (
         email: Binding<String>,
@@ -79,15 +101,28 @@ final class LoginViewModel: ObservableObject {
         )
     }
 
-    init(initialState: LoginViewState) {
+    init(
+        initialState: LoginViewState = .init(),
+        service: LoginService,
+        loginDidSucceed: @escaping () -> Void
+    ) {
+        self.service = service
+        self.loginDidSucceed = loginDidSucceed
         state = initialState
     }
 
     func login() {
         state.isLoggingIn = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            self.state.isLoggingIn = false
-            self.state.isShowingErrorAlert = true
+        service.login(
+            email: state.email,
+            password: state.password
+        ) { [weak self] error in
+            if error == nil {
+                self?.loginDidSucceed()
+            } else {
+                self?.state.isLoggingIn = false
+                self?.state.isShowingErrorAlert = true
+            }
         }
     }
 }
@@ -95,7 +130,13 @@ final class LoginViewModel: ObservableObject {
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LoginView(model: .init(initialState: .init()))
+            LoginView(
+                model: .init(
+                    initialState: .init(),
+                    service: EmptyLoginService(),
+                    loginDidSucceed: {}
+                )
+            )
         }
     }
 }
