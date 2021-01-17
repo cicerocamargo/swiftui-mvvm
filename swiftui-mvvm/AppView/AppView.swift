@@ -5,21 +5,31 @@ struct AppView: View {
     
     var body: some View {
         switch viewModel.state {
-        case .login:
-            return EmptyView()
+        case let .login(viewModel):
+            return AnyView(
+                NavigationView {
+                    LoginView(model: viewModel)
+                }
+            )
         
-        case .loggedArea:
-            return EmptyView()
+        case let .loggedArea(sessionService):
+            return AnyView(
+                VStack {
+                    Text("Bem-vindo!")
+                    Button(action: sessionService.logout) {
+                        Text("Sair")
+                    }
+                }
+            )
         
         case .none:
-            return EmptyView()
+            return AnyView(EmptyView())
         }
     }
-
 }
 
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView(viewModel: .init(sessionService: FakeSessionService(user: nil)))
+        AppView(viewModel: .init(sessionService: FakeSessionService(user: .init())))
     }
 }
