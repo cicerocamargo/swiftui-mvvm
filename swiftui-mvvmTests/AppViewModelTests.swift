@@ -1,44 +1,18 @@
 @testable import swiftui_mvvm
-import XCTest
-
-enum AppViewState {
-    case login
-    case loggedArea
-}
-
-struct User {}
-
 import Combine
-
-protocol SessionService: LoginService {
-    var user: User? { get }
-    var userPublisher: AnyPublisher<User?, Never> { get }
-    func logout()
-}
-
-final class AppViewModel {
-    @Published private(set) var state: AppViewState
-    private var userCancellable: AnyCancellable?
-    
-    init(sessionService: SessionService) {
-        state = sessionService.user == nil ? .login : .loggedArea
-        userCancellable = sessionService.userPublisher.sink { [weak self] user in
-            self?.state = user == nil ? .login : .loggedArea
-        }
-    }
-}
+import XCTest
 
 final class AppViewModelTests: XCTestCase {
     func test_whenUserIsLoggedIn_showsLoggedArea() {
         let (sut, _) = makeSUT(isLoggedIn: true)
         
-        XCTAssert(sut.state == .loggedArea)
+        XCTAssert(sut.state?.isLoggedArea == true)
     }
     
     func test_whenUserIsNotLoggedIn_showsLogin() {
         let (sut, _) = makeSUT(isLoggedIn: false)
         
-        XCTAssert(sut.state == .login)
+        XCTAssert(sut.state?.isLogin == true)
     }
     
     func test_whenUserLogsIn_showsLoggedArea() {
@@ -46,7 +20,7 @@ final class AppViewModelTests: XCTestCase {
         
         service.login(email: "", password: "", completion: { _ in })
 
-        XCTAssert(sut.state == .loggedArea)
+        XCTAssert(sut.state?.isLoggedArea == true)
     }
     
     func test_whenUserLogsOut_showsLogin() {
@@ -54,9 +28,11 @@ final class AppViewModelTests: XCTestCase {
         
         service.logout()
 
-        XCTAssert(sut.state == .login)
+        XCTAssert(sut.state?.isLogin == true)
     }
 }
+
+// MARK: - Helpers
 
 private extension AppViewModelTests {
     class StubSessionService: SessionService {
@@ -85,5 +61,17 @@ private extension AppViewModelTests {
     func makeSUT(isLoggedIn: Bool) -> (AppViewModel, StubSessionService) {
         let sessionService = StubSessionService(user: isLoggedIn ? .init() : nil)
         return (AppViewModel(sessionService: sessionService), sessionService)
+    }
+}
+
+private extension AppViewState {
+    var isLogin: Bool {
+        guard case .login = self else { return false }
+        return true
+    }
+    
+    var isLoggedArea: Bool {
+        guard case .loggedArea = self else { return false }
+        return true
     }
 }
