@@ -46,8 +46,7 @@ struct Login_Previews: PreviewProvider {
             LoginView(
                 model: .init(
                     initialState: .init(),
-                    service: EmptyLoginService(),
-                    loginDidSucceed: {}
+                    service: EmptyLoginService()
                 )
             )
         }

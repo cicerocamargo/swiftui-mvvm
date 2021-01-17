@@ -12,18 +12,11 @@ import XCTest
 class LoginTests: XCTestCase {
     private var viewModel: LoginViewModel! // Subject Under Test
     private var service: LoginServiceMock!
-    private var didCallLoginDidSucceed: Bool!
 
     override func setUp() {
         super.setUp()
-        didCallLoginDidSucceed = false
         service = .init()
-        viewModel = .init(
-            service: service,
-            loginDidSucceed: { [weak self] in
-                self?.didCallLoginDidSucceed = true
-            }
-        )
+        viewModel = .init(service: service)
     }
 
     func testDefaultInitialState() {
@@ -60,9 +53,6 @@ class LoginTests: XCTestCase {
         XCTAssertEqual(viewModel.state.footerMessage, LoginViewState.isLoggingInFooter)
         XCTAssertEqual(service.lastReceivedEmail, "codemus.dev@gmail.com")
         XCTAssertEqual(service.lastReceivedPassword, "x")
-
-        service.completion?(nil)
-        XCTAssert(didCallLoginDidSucceed)
     }
 
     func testFailableLoginFlow() {

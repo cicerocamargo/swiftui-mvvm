@@ -36,8 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             LoginView(
                 model: .init(
                     initialState: .init(),
-                    service: FailWithDelayLoginService(),
-                    loginDidSucceed: {}
+                    service: FailWithDelayLoginService()
                 )
             )
         }

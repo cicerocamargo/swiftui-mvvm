@@ -4,7 +4,6 @@ import SwiftUI
 final class LoginViewModel: ObservableObject {
     @Published private(set) var state: LoginViewState
     private let service: LoginService
-    private let loginDidSucceed: () -> Void
 
     var bindings: (
         email: Binding<String>,
@@ -20,11 +19,9 @@ final class LoginViewModel: ObservableObject {
 
     init(
         initialState: LoginViewState = .init(),
-        service: LoginService,
-        loginDidSucceed: @escaping () -> Void // TODO: remove
+        service: LoginService
     ) {
         self.service = service
-        self.loginDidSucceed = loginDidSucceed
         state = initialState
     }
 
@@ -34,9 +31,7 @@ final class LoginViewModel: ObservableObject {
             email: state.email,
             password: state.password
         ) { [weak self] error in
-            if error == nil {
-                self?.loginDidSucceed()
-            } else {
+            if error != nil {
                 self?.state.isLoggingIn = false
                 self?.state.isShowingErrorAlert = true
             }
