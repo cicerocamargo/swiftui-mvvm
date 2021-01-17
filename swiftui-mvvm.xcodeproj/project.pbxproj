@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61D8263A25B45046001BDE82 /* AppViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D8263925B45046001BDE82 /* AppViewModelTests.swift */; };
 		A600DDA825122722002816F5 /* Minimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600DDA725122722002816F5 /* Minimal.swift */; };
 		A67096EB25137A1900E3846A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67096EA25137A1900E3846A /* Login.swift */; };
 		A67096EE2513898600E3846A /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67096ED2513898600E3846A /* BindingExtensions.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61D8263925B45046001BDE82 /* AppViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModelTests.swift; sourceTree = "<group>"; };
 		A600DDA725122722002816F5 /* Minimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minimal.swift; sourceTree = "<group>"; };
 		A67096EA25137A1900E3846A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		A67096ED2513898600E3846A /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				A6B2DC2A25065DBB0036FBD1 /* Info.plist */,
 				A6AA032325290FFA00DB97E1 /* LoginTests.swift */,
+				61D8263925B45046001BDE82 /* AppViewModelTests.swift */,
 			);
 			path = "swiftui-mvvmTests";
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61D8263A25B45046001BDE82 /* AppViewModelTests.swift in Sources */,
 				A6AA032425290FFA00DB97E1 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
