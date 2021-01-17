@@ -13,6 +13,10 @@
 		61D8264D25B459FF001BDE82 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D8264C25B459FF001BDE82 /* AppViewModel.swift */; };
 		61D8265125B45A1D001BDE82 /* AppViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D8265025B45A1D001BDE82 /* AppViewState.swift */; };
 		61D8265525B45A3B001BDE82 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D8265425B45A3B001BDE82 /* AppView.swift */; };
+		61D8266125B45DBA001BDE82 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D8266025B45DBA001BDE82 /* LoginView.swift */; };
+		61D8266725B45E13001BDE82 /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D8266625B45E13001BDE82 /* LoginViewState.swift */; };
+		61D8266B25B45E3A001BDE82 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D8266A25B45E3A001BDE82 /* LoginService.swift */; };
+		61D8266F25B45E58001BDE82 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D8266E25B45E58001BDE82 /* LoginViewModel.swift */; };
 		A600DDA825122722002816F5 /* Minimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600DDA725122722002816F5 /* Minimal.swift */; };
 		A67096EB25137A1900E3846A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67096EA25137A1900E3846A /* Login.swift */; };
 		A67096EE2513898600E3846A /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67096ED2513898600E3846A /* BindingExtensions.swift */; };
@@ -41,6 +45,10 @@
 		61D8264C25B459FF001BDE82 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		61D8265025B45A1D001BDE82 /* AppViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewState.swift; sourceTree = "<group>"; };
 		61D8265425B45A3B001BDE82 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		61D8266025B45DBA001BDE82 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		61D8266625B45E13001BDE82 /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
+		61D8266A25B45E3A001BDE82 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		61D8266E25B45E58001BDE82 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A600DDA725122722002816F5 /* Minimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minimal.swift; sourceTree = "<group>"; };
 		A67096EA25137A1900E3846A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		A67096ED2513898600E3846A /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
@@ -74,14 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		61D8263D25B4598F001BDE82 /* AppView */ = {
+		61D8263D25B4598F001BDE82 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				61D8264C25B459FF001BDE82 /* AppViewModel.swift */,
 				61D8265025B45A1D001BDE82 /* AppViewState.swift */,
 				61D8265425B45A3B001BDE82 /* AppView.swift */,
 			);
-			path = AppView;
+			path = App;
 			sourceTree = "<group>";
 		};
 		61D8263E25B45999001BDE82 /* Services */ = {
@@ -98,6 +106,26 @@
 				61D8264625B459DC001BDE82 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		61D8265C25B45D91001BDE82 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				61D8265F25B45DA5001BDE82 /* Login */,
+				61D8263D25B4598F001BDE82 /* App */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		61D8265F25B45DA5001BDE82 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				61D8266025B45DBA001BDE82 /* LoginView.swift */,
+				61D8266625B45E13001BDE82 /* LoginViewState.swift */,
+				61D8266A25B45E3A001BDE82 /* LoginService.swift */,
+				61D8266E25B45E58001BDE82 /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		A600DDA625122707002816F5 /* Recipes */ = {
@@ -138,9 +166,9 @@
 		A6B2DC1025065DBA0036FBD1 /* swiftui-mvvm */ = {
 			isa = PBXGroup;
 			children = (
+				61D8265C25B45D91001BDE82 /* Scenes */,
 				61D8264525B459D0001BDE82 /* Models */,
 				61D8263E25B45999001BDE82 /* Services */,
-				61D8263D25B4598F001BDE82 /* AppView */,
 				A67096EC2513897700E3846A /* Extension */,
 				A600DDA625122707002816F5 /* Recipes */,
 				A6B2DC1125065DBA0036FBD1 /* AppDelegate.swift */,
@@ -216,7 +244,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Cicero Camargo";
 				TargetAttributes = {
 					A6B2DC0D25065DBA0036FBD1 = {
@@ -274,13 +302,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				61D8264025B459B0001BDE82 /* SessionService.swift in Sources */,
+				61D8266B25B45E3A001BDE82 /* LoginService.swift in Sources */,
 				A6B2DC1225065DBA0036FBD1 /* AppDelegate.swift in Sources */,
 				61D8264D25B459FF001BDE82 /* AppViewModel.swift in Sources */,
 				61D8265125B45A1D001BDE82 /* AppViewState.swift in Sources */,
+				61D8266725B45E13001BDE82 /* LoginViewState.swift in Sources */,
+				61D8266F25B45E58001BDE82 /* LoginViewModel.swift in Sources */,
 				A6B2DC1425065DBA0036FBD1 /* SceneDelegate.swift in Sources */,
 				A600DDA825122722002816F5 /* Minimal.swift in Sources */,
 				A67096EB25137A1900E3846A /* Login.swift in Sources */,
 				A67096EE2513898600E3846A /* BindingExtensions.swift in Sources */,
+				61D8266125B45DBA001BDE82 /* LoginView.swift in Sources */,
 				61D8265525B45A3B001BDE82 /* AppView.swift in Sources */,
 				61D8264725B459DC001BDE82 /* User.swift in Sources */,
 			);
@@ -343,6 +375,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -403,6 +436,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
