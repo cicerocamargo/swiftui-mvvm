@@ -21,7 +21,7 @@ class FakeSessionService: SessionService {
         email: String,
         password: String,
         completion: @escaping (Error?) -> Void) {
-        userSubject.send(.init())
+        userSubject.send(.init(email: email, name: "Zé"))
     }
     
     func logout() {

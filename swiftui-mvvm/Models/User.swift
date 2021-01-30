@@ -1,3 +1,6 @@
 import Foundation
 
-struct User {}
+struct User {
+    var email: String
+    var name: String
+}

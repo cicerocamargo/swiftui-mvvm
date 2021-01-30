@@ -31,7 +31,13 @@ struct AppView: View {
 #if DEBUG
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView(viewModel: .init(sessionService: FakeSessionService(user: .init())))
+        AppView(
+            viewModel: .init(
+                sessionService: FakeSessionService(
+                    user: .init(email: "zeh@bol.com.br", name: "Zé")
+                )
+            )
+        )
     }
 }
 #endif

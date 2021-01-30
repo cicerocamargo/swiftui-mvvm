@@ -5,10 +5,13 @@ final class AppViewModel: ObservableObject {
     private var userCancellable: AnyCancellable?
     
     init(sessionService: SessionService) {
-        userCancellable = sessionService.userPublisher.sink { [weak self] user in
-            self?.state = user == nil
-                ? .login(LoginViewModel(service: sessionService))
-                : .loggedArea(sessionService)
-        }
+        userCancellable = sessionService.userPublisher
+            .map { $0 != nil }
+            .removeDuplicates()
+            .sink { [weak self] isLoggedIn in
+                self?.state = isLoggedIn
+                    ? .loggedArea(sessionService)
+                    : .login(LoginViewModel(service: sessionService))
+            }
     }
 }
