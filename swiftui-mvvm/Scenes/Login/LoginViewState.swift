@@ -5,6 +5,7 @@ struct LoginViewState: Equatable {
     var password = ""
     var isLoggingIn = false
     var isShowingErrorAlert = false
+    var signUpViewModel: SignUpViewModel?
 }
 
 extension LoginViewState {

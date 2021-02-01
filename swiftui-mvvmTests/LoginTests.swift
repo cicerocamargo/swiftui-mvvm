@@ -1,11 +1,3 @@
-//
-//  LoginTests.swift
-//  swiftui-mvvmTests
-//
-//  Created by Cicero Camargo on 03/10/20.
-//  Copyright © 2020 Cicero Camargo. All rights reserved.
-//
-
 @testable import swiftui_mvvm
 import XCTest
 
@@ -89,6 +81,26 @@ class LoginTests: XCTestCase {
         )
         XCTAssert(viewModel.state.canSubmit)
         XCTAssert(viewModel.state.footerMessage.isEmpty)
+    }
+
+    func test_showSignUpFlow_createsSignUpViewModel() {
+        viewModel.showSignUpFlow()
+
+        XCTAssertNotNil(viewModel.state.signUpViewModel)
+    }
+
+    func test_signUpBinding_readsValueFromState() {
+        viewModel.showSignUpFlow()
+
+        XCTAssertNotNil(viewModel.bindings.signUpViewModel.wrappedValue)
+    }
+
+    func test_signUpBinding_writesValueToState() {
+        viewModel.showSignUpFlow()
+
+        viewModel.bindings.signUpViewModel.wrappedValue = nil
+
+        XCTAssertNil(viewModel.state.signUpViewModel)
     }
 }
 
